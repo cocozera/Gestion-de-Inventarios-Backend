@@ -17,17 +17,6 @@ class VentaCreate(BaseModel):
     items: List[VentaItem]
 
 
-class VentaDetalleResponse(BaseModel):
-    id: int
-    producto_id: int
-    cantidad: int
-    precio_unitario: float
-    subtotal: float
-
-    class Config:
-        from_attributes = True
-
-
 class VentaResponse(BaseModel):
     mensaje: str
     ticket_id: int

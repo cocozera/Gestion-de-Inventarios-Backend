@@ -1,5 +1,5 @@
 from .producto import ProductoResponse, ProductoCreate, ProductoUpdate, ProductoBusqueda
-from .venta import VentaCreate, VentaItem, VentaResponse, VentaDetalleResponse, VentaListResponse
+from .venta import VentaCreate, VentaItem, VentaResponse, VentaListResponse
 from .usuario import UsuarioCreate, UsuarioResponse, UsuarioLogin, Token
 
 __all__ = [
@@ -10,7 +10,6 @@ __all__ = [
     "VentaCreate",
     "VentaItem",
     "VentaResponse",
-    "VentaDetalleResponse",
     "VentaListResponse",
     "UsuarioCreate",
     "UsuarioResponse",

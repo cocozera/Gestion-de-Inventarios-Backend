@@ -1,4 +1,4 @@
 from .config import get_settings
-from .database import get_db, SessionLocal
+from .database import get_db
 
-__all__ = ["get_settings", "get_db", "SessionLocal"]
+__all__ = ["get_settings", "get_db"]
