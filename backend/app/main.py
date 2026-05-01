@@ -5,7 +5,7 @@ from app.core.config import get_settings
 from app.core.database import engine, Base
 from app.api.routers import auth, productos, ventas
 
-app = FastAPI(title="StockAI API", version="1.0.0")
+app = FastAPI(title="StockRL API", version="1.0.0")
 settings = get_settings()
 
 app.add_middleware(

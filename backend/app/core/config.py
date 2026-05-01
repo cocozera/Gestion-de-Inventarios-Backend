@@ -3,7 +3,7 @@ from functools import lru_cache
 
 
 class Settings(BaseSettings):
-    app_name: str = "StockAI API"
+    app_name: str = "StockRL API"
     debug: bool = False
     # Base de datos PostgreSQL
     database_url: str = "postgresql://postgres:postgres@localhost:5432/stockai"
