@@ -10,13 +10,12 @@ from app.schemas import ProductoBusqueda, ProductoResponse, ProductoCreate, Prod
 router = APIRouter(prefix="/productos", tags=["productos"])
 
 
-@router.get("/{codigo_barras}", response_model=ProductoBusqueda)
+@router.get("/buscar/{codigo_barras}", response_model=ProductoBusqueda)
 def buscar_por_codigo(
     codigo_barras: str,
     db: Session = Depends(get_db),
     current_user: Usuario = Depends(get_current_user),
 ):
-    """Búsqueda por código de barras (lector/escáner). Respuesta en milisegundos si codigo_barras está indexado."""
     producto = (
         db.query(Producto)
         .filter(
