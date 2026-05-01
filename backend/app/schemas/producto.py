@@ -7,6 +7,7 @@ class ProductoBusqueda(BaseModel):
     id: int
     nombre: str
     precio_venta: float
+    stock_actual: int
 
     class Config:
         from_attributes = True
