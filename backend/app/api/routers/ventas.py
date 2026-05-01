@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
-from typing import List
+from typing import List, Optional
 from datetime import datetime
 
 from app.core.database import get_db
@@ -14,8 +14,8 @@ router = APIRouter(prefix="/ventas", tags=["ventas"])
 
 @router.get("/", response_model=List[VentaListResponse])
 def listar_ventas(
-    desde: datetime | None = Query(None),
-    hasta: datetime | None = Query(None),
+    desde: Optional[datetime] = Query(None),
+    hasta: Optional[datetime] = Query(None),
     limit: int = Query(100, le=500),
     db: Session = Depends(get_db),
     current_user: Usuario = Depends(require_roles("ADMIN")),

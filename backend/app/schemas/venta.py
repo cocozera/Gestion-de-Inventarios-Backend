@@ -11,9 +11,8 @@ class VentaItem(BaseModel):
 
 
 class VentaCreate(BaseModel):
-    """Payload desde React al cerrar venta"""
     usuario_id: int
-    medio_pago: str  # EFECTIVO, DEBITO, BILLETERA_VIRTUAL
+    medio_pago: str
     total: Decimal
     items: List[VentaItem]
 
@@ -22,8 +21,8 @@ class VentaDetalleResponse(BaseModel):
     id: int
     producto_id: int
     cantidad: int
-    precio_unitario: Decimal
-    subtotal: Decimal
+    precio_unitario: float
+    subtotal: float
 
     class Config:
         from_attributes = True
@@ -37,7 +36,7 @@ class VentaResponse(BaseModel):
 class VentaListResponse(BaseModel):
     id: int
     fecha_hora: datetime
-    total: Decimal
+    total: float
     medio_pago: str
     estado: str
 

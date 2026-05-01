@@ -4,10 +4,9 @@ from typing import Optional
 
 
 class ProductoBusqueda(BaseModel):
-    """Respuesta para GET /api/productos/{codigo_barras} (lector/escáner)"""
     id: int
     nombre: str
-    precio_venta: Decimal
+    precio_venta: float
 
     class Config:
         from_attributes = True
@@ -18,8 +17,8 @@ class ProductoResponse(BaseModel):
     codigo_barras: str
     nombre: str
     categoria_id: Optional[int] = None
-    precio_costo: Decimal
-    precio_venta: Decimal
+    precio_costo: float
+    precio_venta: float
     stock_actual: int
     stock_minimo: int
     estado: bool
@@ -32,7 +31,7 @@ class ProductoCreate(BaseModel):
     codigo_barras: str
     nombre: str
     categoria_id: Optional[int] = None
-    precio_costo: Decimal = 0
+    precio_costo: Decimal = Decimal("0")
     precio_venta: Decimal
     stock_actual: int = 0
     stock_minimo: int = 0
