@@ -4,7 +4,7 @@ from typing import List, Optional
 from datetime import datetime
 
 from app.core.database import get_db
-from app.core.auth import get_current_user, require_roles
+from app.core.auth import require_roles
 from app.models import Usuario, Venta
 from app.schemas import VentaCreate, VentaResponse, VentaListResponse
 from app.services.venta_service import procesar_venta
